@@ -22,3 +22,7 @@ $(document).ready(function(){
     $(this).toggleClass('open');
   });
 });
+
+window.sr = ScrollReveal();
+//sr.reveal('.splash-item');
+sr.reveal('.splash-item', { duration: 2000 }, 50);

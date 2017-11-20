@@ -1,7 +1,6 @@
 /* -----------------------------------------------
    Layout
 ----------------------------------------------- */
-
 * {
   box-sizing: border-box;
 }
@@ -10,6 +9,9 @@ body {
   min-height: 100%;
   -webkit-font-smoothing: antialiased; // helps make fonts closer to designed versions
   -moz-osx-font-smoothing: grayscale; // helps make fonts closer to designed versions
+}
+main {
+  position: relative;
 }
 
 
