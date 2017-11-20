@@ -1,0 +1,227 @@
+@@include(handlebars("../_shell/_head.hbs", {
+  "root": "../",
+  "pageClass": "style-guide"
+}))
+
+@@include(handlebars('../_shell/_header.hbs', {
+  "root": "../",
+  "page": "style-guide"
+}))
+
+<main class="main">
+
+  <h2>Data Driven Content:</h2>
+  <!-- Example using handlebars -->
+  <!-- Note! there are not spaces or line-breaks... -->
+  @@include(handlebars('./_sample-template.hbs', {
+    "root":"./",
+    "foo":"Bar",
+    "data":"sample-collection"
+  }))
+
+  <h1>Hello</h1>
+
+    <h1>H1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur a neque in porttitor. Proin ut lorem sodales, gravida risus rutrum, finibus sapien. Vivamus urna sem, laoreet vel aliquet in, efficitur ut leo. Mauris dignissim augue purus, at maximus dolor faucibus nec. Vivamus sit amet varius libero.</h1>
+    <h2>H2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur a neque in porttitor. Proin ut lorem sodales, gravida risus rutrum, finibus sapien. Vivamus urna sem, laoreet vel aliquet in, efficitur ut leo. Mauris dignissim augue purus, at maximus dolor faucibus nec. Vivamus sit amet varius libero.</h2>
+    <h3>H3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur a neque in porttitor. Proin ut lorem sodales, gravida risus rutrum, finibus sapien. Vivamus urna sem, laoreet vel aliquet in, efficitur ut leo. Mauris dignissim augue purus, at maximus dolor faucibus nec. Vivamus sit amet varius libero.</h3>
+    <h4>H4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur a neque in porttitor. Proin ut lorem sodales, gravida risus rutrum, finibus sapien. Vivamus urna sem, laoreet vel aliquet in, efficitur ut leo. Mauris dignissim augue purus, at maximus dolor faucibus nec. Vivamus sit amet varius libero.</h4>
+    <h5>H5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur a neque in porttitor. Proin ut lorem sodales, gravida risus rutrum, finibus sapien. Vivamus urna sem, laoreet vel aliquet in, efficitur ut leo. Mauris dignissim augue purus, at maximus dolor faucibus nec. Vivamus sit amet varius libero.</h5>
+    <h6>H6 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur a neque in porttitor. Proin ut lorem sodales, gravida risus rutrum, finibus sapien. Vivamus urna sem, laoreet vel aliquet in, efficitur ut leo. Mauris dignissim augue purus, at maximus dolor faucibus nec. Vivamus sit amet varius libero.</h6>
+
+    <hr />
+
+    <h2>Buttons</h2>
+    <div class="btn-bg"><a href="" class="button">Learn More</a></div>
+
+    <hr />
+
+    <h2>Icons</h2>
+    <div class="icons">
+      <i class="ico ico-menu"></i>
+      <i class="ico ico-cross"></i>
+      <i class="ico ico-chevron-left"></i>
+      <i class="ico ico-chevron-right"></i>
+    </div>
+
+    <hr />
+
+    <h2>Large Paragraph</h2>
+    <p class="large-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <h2>Medium Paragraph</h2>
+    <p class="med-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <h2>Normal Paragraph</h2>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor.
+
+    The <a href="#">a element</a> and <a href="http://example.com" target="_blank">external a element</a> examples
+
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.
+    <h2 id="blockquote">Blockquote</h2>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <blockquote>"<strong>This is a blockquote.</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl."</blockquote>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2 id="figure-caption">Figure-Caption</h2>
+    <figure><img src="http://placehold.it/350x150" alt="A placeholder figure image." />
+    <figcaption>The figcaption element example</figcaption></figure>
+
+    <hr />
+
+    <h1 id="list-types">List Types</h1>
+    <h2 id="ordered-list">Ordered List</h2>
+    <ol>
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3
+    <ol>
+      <li>List Item 3.1</li>
+      <li>List Item 3.2
+    <ol>
+      <li>List Item 3.2.1</li>
+      <li>List Item 3.2.2</li>
+    </ol>
+    </li>
+      <li>List Item 3.3</li>
+    </ol>
+    </li>
+      <li>List Item 4</li>
+    </ol>
+    <h2 id="unordered-list">Unordered List</h2>
+    <ul>
+      <li><strong>List Item 1.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis nisl ac consequat fringilla. Etiam quis iaculis est. Phasellus ut rutrum diam. Curabitur et diam eu massa condimentum cursus. Proin eget risus vel nunc sagittis consectetur in et augue. Sed suscipit quis purus in iaculis. Etiam posuere quam quam, a mollis enim hendrerit vel.</li>
+      <li><strong>List Item 2.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis nisl ac consequat fringilla. Etiam quis iaculis est. Phasellus ut rutrum diam. Curabitur et diam eu massa condimentum cursus. Proin eget risus vel nunc sagittis consectetur in et augue. Sed suscipit quis purus in iaculis. Etiam posuere quam quam, a mollis enim hendrerit vel.</li>
+      <li><strong>List Item 3.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis nisl ac consequat fringilla. Etiam quis iaculis est. Phasellus ut rutrum diam. Curabitur et diam eu massa condimentum cursus. Proin eget risus vel nunc sagittis consectetur in et augue. Sed suscipit quis purus in iaculis. Etiam posuere quam quam, a mollis enim hendrerit vel.
+    <ul>
+      <li>List Item 3.1</li>
+      <li>List Item 3.2
+    <ul>
+      <li>List Item 3.2.1</li>
+      <li>List Item 3.2.2</li>
+    </ul>
+    </li>
+      <li>List Item 3.3</li>
+    </ul>
+    </li>
+      <li>List Item 4</li>
+    </ul>
+
+    <hr />
+
+    <h1 id="tables">Tables</h1>
+    <table cellspacing="0" cellpadding="0"><caption>This is a table caption</caption>
+    <thead>
+    <tr>
+    <th>Table Header 1</th>
+    <th>Table Header 2</th>
+    <th>Table Header 3</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+    <td>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</td>
+    <td>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+    </tr>
+    <tr>
+    <td>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</td>
+    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+    <td>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+    </tr>
+    <tr>
+    <td>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+    <td>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</td>
+    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+    </tr>
+    <tr>
+    <td colspan="3">A row with a cell spanning all 3 columns</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+    <th>Table Footer 1</th>
+    <th>Table Footer 2</th>
+    <th>Table Footer 3</th>
+    </tr>
+    </tfoot>
+    </table>
+
+    <hr />
+
+    <h2>YouTube video (iframe):</h2>
+
+    <div class="video-example">
+      <iframe src="http://www.youtube.com/embed/l4f9QF0SGuQ" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+    </div>
+
+    <hr />
+
+    <h1 id="form-elements">Form Elements</h1>
+    <h3>The Form:</h3>
+    <div id="gform_wrapper_3" class="gf_browser_gecko gform_wrapper contact-form_wrapper"><form id="gform_3" class="contact-form" action="/about/contact/" enctype="multipart/form-data" method="post">
+    <div class="gform_body">
+    <ul id="gform_fields_3" class="gform_fields top_label form_sublabel_below description_below">
+      <li id="field_3_1" class="gfield fname gfield_contains_required field_sublabel_below field_description_below">
+    <div class="gform_padding_wrapper">
+
+    <label class="gfield_label" for="input_3_1">First Name<span class="gfield_required">*</span></label>
+    <div class="ginput_container"><input id="input_3_1" class="medium" tabindex="1" name="input_1" type="text" value="" /></div>
+    </div></li>
+      <li id="field_3_2" class="gfield lname field_sublabel_below field_description_below">
+    <div class="gform_padding_wrapper">
+
+    <label class="gfield_label" for="input_3_2">Last Name</label>
+    <div class="ginput_container"><input id="input_3_2" class="medium" tabindex="2" name="input_2" type="text" value="" /></div>
+    </div></li>
+      <li id="field_3_3" class="gfield email gfield_contains_required field_sublabel_below field_description_below">
+    <div class="gform_padding_wrapper">
+
+    <label class="gfield_label" for="input_3_3">Email<span class="gfield_required">*</span></label>
+    <div class="ginput_container"><input id="input_3_3" class="medium" tabindex="3" name="input_3" type="text" value="" /></div>
+    </div></li>
+      <li id="field_3_4" class="gfield phone field_sublabel_below field_description_below">
+    <div class="gform_padding_wrapper">
+
+    <label class="gfield_label" for="input_3_4">Phone</label>
+    <div class="ginput_container"><input id="input_3_4" class="medium" tabindex="4" name="input_4" type="text" value="" /></div>
+    </div></li>
+      <li id="field_3_11" class="gfield topic-dropdown field_sublabel_below field_description_below">
+    <div class="gform_padding_wrapper">
+
+    <label class="gfield_label" for="input_3_11">Topic</label>
+    <div class="ginput_container"><select id="input_3_11" class="medium gfield_select" tabindex="5" name="input_11">
+    <option value="General Inquiries">General Inquiries</option>
+    <option value="Catering">Catering</option>
+    <option value="Press">Press</option>
+    <option value="Careers">Careers</option>
+    </select></div>
+    </div></li>
+      <li id="field_3_10" class="gfield message gfield_contains_required field_sublabel_below field_description_below">
+    <div class="gform_padding_wrapper">
+
+    <label class="gfield_label" for="input_3_10">Message<span class="gfield_required">*</span></label>
+    <div class="ginput_container"><textarea id="input_3_10" class="textarea medium" tabindex="6" cols="50" name="input_10" rows="10"></textarea></div>
+    </div></li>
+    </ul>
+    </div>
+    <div class="gform_footer top_label"><input id="gform_submit_button_3" class="gform_button button" tabindex="7" type="submit" value="Submit" />
+    <input class="gform_hidden" name="is_submit_3" type="hidden" value="1" />
+    <input class="gform_hidden" name="gform_submit" type="hidden" value="3" /><input class="gform_hidden" name="gform_unique_id" type="hidden" value="" />
+    <input class="gform_hidden" name="state_3" type="hidden" value="WyJbXSIsImY4NTY5MjU3ZmRjMGI5NTc2NjIxNmNiN2U1MWU4YzdiIl0=" />
+    <input id="gform_target_page_number_3" class="gform_hidden" name="gform_target_page_number_3" type="hidden" value="0" />
+    <input id="gform_source_page_number_3" class="gform_hidden" name="gform_source_page_number_3" type="hidden" value="1" />
+    <input name="gform_field_values" type="hidden" value="" /></div>
+    </form></div>
+
+  @@include(handlebars('../_shell/_footer.hbs', {
+    "root": "../"
+  }))
+
+</main>
+
+@@include(handlebars('../_shell/_foot.hbs', {
+  "root": "../"
+}))
+
+

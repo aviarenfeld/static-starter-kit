@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>check</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="controls" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="check" sketch:type="MSArtboardGroup" fill="#000000">
+            <path d="M215.415801,422.487212 C205.069016,422.487212 195.269301,417.658712 188.989873,409.333712 L104.003516,297.041355 C92.9431584,282.460712 95.8212298,261.695783 110.425658,250.635426 C125.053873,239.527498 145.818801,242.453141 156.879158,257.057569 L212.799373,330.888426 L353.39673,105.114426 C363.077516,89.6061405 383.53323,84.8489977 399.089087,94.5297834 C414.621158,104.186783 419.402087,124.642498 409.697516,140.198355 L243.578087,406.836212 C237.821944,416.136426 227.85573,421.940141 216.938087,422.439641 C216.414801,422.487212 215.939087,422.487212 215.415801,422.487212 L215.415801,422.487212 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

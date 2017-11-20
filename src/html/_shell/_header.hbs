@@ -1,0 +1,33 @@
+<header class="banner" role="banner">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <a class="brand" href="index.html">
+        <img alt="cedar" src="{{root}}images/cedar-leaf.png"/>
+      </a>
+
+      <button type="button" id="menu-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <div id="nav-icon3">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+      </button>
+    </div>
+
+
+    <nav class="menu-nav" role="navigation">
+      <ul>
+        <li><a class="{{#if_eq page "home"}}active{{/if_eq}}" href="{{root}}">Home</a></li>
+        <li><a class="{{#if_eq page "style-guide"}}active{{/if_eq}}" href="{{root}}style-guide">Style Guide</a></li>
+        <li><a class="{{#if_eq page "resume"}}active{{/if_eq}}" href="{{root}}resume">Foo</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+</header>
+

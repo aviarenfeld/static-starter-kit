@@ -1,0 +1,24 @@
+@@include(handlebars("../_shell/_head.hbs", {
+  "root": "../",
+  "pageClass": "resume"
+}))
+
+@@include(handlebars('../_shell/_header.hbs', {
+  "root": "../",
+  "page": "resume"
+}))
+
+<main class="main">
+  <div class="landing">
+    <h1>Resume</h1>
+  </div>
+
+  @@include(handlebars('../_shell/_footer.hbs', {
+    "root": ""
+  }))
+
+</main>
+
+@@include(handlebars('../_shell/_foot.hbs', {
+  "root": ""
+}))

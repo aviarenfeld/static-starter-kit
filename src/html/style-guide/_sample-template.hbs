@@ -1,0 +1,25 @@
+<section id="items" class="vw-container">
+
+      <p>Foo: {{ foo }}</p>
+
+      <h2>{{ data.title }}</h2>
+      <p>{{ data.description }}</p>
+
+      {{!-- Loop over each speaker in the collection: --}}
+      {{#each data.collection}}
+
+        <div class="item">
+            {{#if title}}
+              <span class="item-name">{{title}}</span><br/>
+            {{/if}}
+            {{#if link}}
+              <a href="{{link}}" target="_blank" class="speaker-link">Visit Link <span class="ico ico-chevron-right"></span></a>
+            {{/if}}
+        </div>
+
+      {{/each}}
+
+    </div>
+  </div>
+
+</section>

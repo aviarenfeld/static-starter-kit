@@ -1,0 +1,25 @@
+.landing {
+  //background-color: pink;
+  height: 100%;
+}
+
+.title {
+  h1 {
+    color: pink;
+    text-align: center;
+    @include media($min-sm) {
+      text-align: left;
+    }
+  }
+}
+
+.splash-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  padding: 20px;
+  @include media($min-sm) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+}

@@ -1,0 +1,86 @@
+/* -----------------------------------------------
+   Typography
+----------------------------------------------- */
+
+html {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  font-size: 100%;
+  line-height:$base-line-height;
+  font-weight: 300;
+  color: $base-font-color;
+  font-family: $base-font-family;
+}
+
+a {
+  color:$base-link;
+  transition:all 0.3s ease-out;
+  &:hover {
+    color:$base-link-hover;
+  }
+}
+
+  
+/*------------------------------------------------------------
+
+  Filling in H1-H6 default styling will prep the CMS editor
+
+------------------------------------------------------------*/
+h1 {
+
+  // Example Use of Type/Leading Scale for Desktop/Mobile/Tablet (in that order)
+  @include type-scale(32, 22, 28);
+  @include leading-scale(1.6, 1.4, 1.5);
+
+}
+
+h2 {
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+p {
+  padding-bottom:15px;
+  margin:0;
+}
+
+// Leave Lists blank if no custom styling is needed for default.
+ul {
+}
+ol {
+}
+
+blockquote {
+  border-left:5px solid $base-border-color;
+  margin:20px 0;
+  padding-left: 15px;
+}
+
+// Only display content to screen readers
+// See: http://a11yproject.com/posts/how-to-hide-content/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}

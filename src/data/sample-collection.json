@@ -1,0 +1,18 @@
+{
+  "title": "Sample Collection",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, adipisci!",
+  "collection": [
+    {
+      "title": "Open Source Initiative",
+      "link": "http://opensource.org"
+    },
+    {
+      "title": "Charity: Water",
+      "link": "http://www.charitywater.org/"
+    },
+    {
+      "title": "O'Reilly Media",
+      "link": "http://www.oreilly.com/"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>chevron-up</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="controls" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="chevron-up" sketch:type="MSArtboardGroup" fill="#000000">
+            <g sketch:type="MSLayerGroup" transform="translate(132.564103, 188.156651)" id="Shape">
+                <path d="M0,115.461399 C0,110.871996 1.86430769,106.270621 5.60569231,102.76272 L109.594051,5.25985497 C113.186462,1.895623 118.055795,0 123.137949,0 C128.220103,0 133.089436,1.895623 136.681846,5.25586418 L240.665949,102.76272 C248.144462,109.770539 248.148718,121.144277 240.665949,128.152096 C233.183179,135.171887 221.060923,135.171887 213.578154,128.152096 L123.137949,43.3598818 L32.702,128.156087 C25.2234872,135.175878 13.1012308,135.175878 5.61420513,128.156087 C1.8685641,124.652177 0,120.054793 0,115.461399 L0,115.461399 Z" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

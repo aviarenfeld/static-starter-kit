@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>warning</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="controls" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="warning" sketch:type="MSArtboardGroup" fill="#000000">
+            <path d="M430.381569,402.356667 L267.541301,98.3606667 C265.274298,94.4309444 261.069374,92 256.498804,92 C251.909952,92 247.705027,94.4309444 245.456307,98.3606667 L82.6343216,402.356667 C80.4221657,406.213278 80.4587302,410.9655 82.725733,414.785556 C85.011018,418.642167 89.1610955,421 93.6585364,421 L419.339072,421 C423.81823,421 428.004872,418.642167 430.271875,414.785556 C432.538878,410.9655 432.575442,406.213278 430.381569,402.356667 L430.381569,402.356667 Z M274.781084,384.444444 L238.216524,384.444444 L238.216524,347.888889 L274.781084,347.888889 L274.781084,384.444444 L274.781084,384.444444 Z M274.781084,320.472222 L238.216524,320.472222 L238.216524,201.666667 L274.781084,201.666667 L274.781084,320.472222 L274.781084,320.472222 Z" id="Shape-3" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

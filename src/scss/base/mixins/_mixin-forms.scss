@@ -1,0 +1,111 @@
+/*------------------------------------------------------------
+  Form Mixins
+------------------------------------------------------------*/
+
+/* -------------------------------
+    Placeholder Prefixes
+    (originally from Bourbon.io)
+------------------------------- */
+@mixin placeholder {
+  $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+      @content;
+    }
+  }
+}
+
+/* -------------------------------
+    Assign Input Function 
+    (originally from Bourbon.io)
+------------------------------- */
+@function assign-inputs($inputs, $pseudo: null) {
+  $list: ();
+
+  @each $input in $inputs {
+    $input: unquote($input);
+    $input: if($pseudo, $input + ":" + $pseudo, $input);
+    $list: append($list, $input, comma);
+  }
+
+  @return $list;
+}
+
+/* -------------------------------
+    Input Types
+    (originally from Bourbon.io)
+------------------------------- */
+$text-inputs-list: 'input[type="color"]',
+                   'input[type="date"]',
+                   'input[type="datetime"]',
+                   'input[type="datetime-local"]',
+                   'input[type="email"]',
+                   'input[type="month"]',
+                   'input[type="number"]',
+                   'input[type="password"]',
+                   'input[type="search"]',
+                   'input[type="tel"]',
+                   'input[type="text"]',
+                   'input[type="time"]',
+                   'input[type="url"]',
+                   'input[type="week"]',
+                   'input:not([type])',
+                   'textarea';
+
+$all-text-inputs:        assign-inputs($text-inputs-list);
+$all-text-inputs-active: assign-inputs($text-inputs-list, active);
+$all-text-inputs-focus:  assign-inputs($text-inputs-list, focus);
+$all-text-inputs-hover:  assign-inputs($text-inputs-list, hover);
+
+
+/* -------------------------------
+    Button Types
+    (originally from Bourbon.io)
+------------------------------- */
+
+$buttons-list: 'button',
+               'input[type="button"]',
+               'input[type="reset"]',
+               'input[type="submit"]';
+
+$all-buttons:        assign-inputs($buttons-list);
+$all-buttons-active: assign-inputs($buttons-list, active);
+$all-buttons-focus:  assign-inputs($buttons-list, focus);
+$all-buttons-hover:  assign-inputs($buttons-list, hover);
+
+$all-button-inputs:        $all-buttons;
+$all-button-inputs-active: $all-buttons-active;
+$all-button-inputs-focus:  $all-buttons-focus;
+$all-button-inputs-hover:  $all-buttons-hover;
+
+
+/* -------------------------------
+        Usage Examples
+------------------------------- */
+/*
+  #{$all-text-inputs} {
+    border: 1px solid #f00;
+  }
+
+  #{$all-text-inputs-focus},
+  #{$all-text-inputs-hover} {
+    border: 1px solid #0f0;
+  }
+
+  #{$all-text-inputs-active} {
+    border: 1px solid #00f;
+  }
+
+  #{$all-buttons} {
+    background-color: #f00;
+  }
+
+  #{$all-buttons-focus},
+  #{$all-buttons-hover} {
+    background-color: #0f0;
+  }
+
+  #{$all-buttons-active} {
+    background-color: #00f;
+  }
+*/

@@ -1,0 +1,192 @@
+/* -----------------------------------------------
+   Forms
+----------------------------------------------- */
+
+#{$all-text-inputs} {
+  width:100%;
+  padding:10px;
+  border:none;
+  background:#fff;
+  box-sizing:border-box;
+  border:1px solid $base-form-color;
+  box-shadow: none; // fix for Firefox red highlight
+  -webkit-appearance:none; // fix for box-shadow on mobile safari
+  &:focus {
+    outline:0; // fix for Chrome blue highlight
+  }
+
+  @include placeholder {
+    opacity:1;
+    color:$base-form-color;
+  }
+}
+
+#{$all-button-inputs} {
+  border:none;
+  border-radius:0px; // removes rounded border on safari mobile
+
+  &:focus {
+    outline:0; // fix for Chrome blue highlight
+  }
+}
+
+input[type="search"] {
+  box-sizing:border-box; // override for wordpress search boxes
+}
+
+.select-wrapper {
+  position:relative;
+  width:100%;
+  height:46px;
+  overflow: hidden;
+  background:#fff;
+  border:1px solid $base-form-color;
+
+  &:before {
+    content:"";
+    position:absolute;
+    right:-1px;
+    top:-1px;
+    color:#fff;
+    font-size:$base-font-size;
+    line-height: 1;
+    text-align: center;
+    width:17px;
+    height:15px;
+    padding:22px;
+    background:url(../images/select-arrow.svg) no-repeat center center;
+    background-size:17px 12px;
+    border:1px solid $base-form-color;
+  }
+
+  select {
+    position:relative;
+    z-index: 100;
+    cursor: pointer;
+    width:120%;
+    height:46px;
+    padding:10px;
+    background: transparent;
+    border:none;
+    box-shadow: none; // fix for Firefox red highlight
+    -webkit-appearance: none; // fix for box-shadow on mobile safari
+
+    option {
+      font-style: normal;
+    }
+  }
+}
+
+select:-moz-focusring { // fix for Firefox selectbox dotted line
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+
+// Gravity Forms Site Wide (if applicable)
+.gform_wrapper {
+  ul {
+   @extend .remove-list-styles;
+  }
+  .gfield {
+    padding-bottom:30px;
+  }
+  .ginput_full {
+    @include clearfix();
+  }
+}
+
+
+// Stylized Checkboxes
+// Can remove if not using.
+.custom-checkboxes {
+  input[type="checkbox"] {
+    z-index: 20;
+    position:absolute;
+    right:15px;
+    top:13px;
+    width:25px;
+    height:25px;
+    opacity:0;
+    cursor:pointer;
+  }
+
+  span {
+    position:relative;
+    display:block;
+    color:$base-link;
+    font-size:$base-font-size;
+    font-weight: 500;
+    padding-right:35px;
+
+    &:before, &:after {
+      content:"";
+      position:absolute;
+      right:0;
+      top:6px;
+      width:16px;
+      height:16px;
+    }
+
+    &:before {
+      display:block;
+      border:2px solid $accent-primary ;
+
+    }
+    &:after {
+      display:none;
+      background:$accent-primary ;
+    }
+  }
+}
+
+/* Custom File Inputs */
+.file-input-wrapper {
+  overflow: hidden;
+  position: relative;
+  @include button();
+
+  &:before {
+    content: 'Add File';
+  }
+
+  .file-input {
+    cursor: pointer;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    /*This makes the button huge. If you want a bigger button, increase the font size*/
+    font-size:50px;
+    /*Opacity settings for all browsers*/
+    opacity: 0;
+    -moz-opacity: 0;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  }
+}
+
+/* Error Messages */
+.with-errors {
+  #{$all-text-inputs} {
+    background: tint( $base-form-highlight, 90 );
+  }
+
+  &.checkbox {
+    label {
+      color: $base-form-highlight;
+    }
+  }
+
+  .select-wrapper {
+    background: tint( $base-form-highlight, 90 );
+  }
+}
+
+.error-message {
+  color: $base-form-highlight;
+  font-weight: bold;
+  font-style: italic;
+  position: relative;
+  @include font-size( 14px );
+}

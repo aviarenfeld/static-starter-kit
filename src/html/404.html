@@ -1,0 +1,24 @@
+@@include(handlebars("./_shell/_head.hbs", {
+  "root": "",
+  "pageClass": "not-found"
+}))
+
+@@include(handlebars('./_shell/_header.hbs', {
+  "root": "",
+  "page": "not-found"
+}))
+
+<main class="main">
+
+  <h2>The page cannot be found.</h2>
+  <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. <a href="/">Return to the home page.</a></p>
+
+  @@include(handlebars('./_shell/_footer.hbs', {
+    "root": ""
+  }))
+
+</main>
+
+@@include(handlebars('./_shell/_foot.hbs', {
+  "root": ""
+}))

@@ -1,0 +1,194 @@
+/*------------------------------------------------------------
+  Font Related Mixins / Extensions
+------------------------------------------------------------*/
+
+// Pixels to EMs / REMs Converstion (originally from Bourbon.io)
+
+/* NOTE:  For a relational value of 12px write rem(12)
+          Assumes $em-base is the font-size of <html>
+*/
+
+// Strip Units
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+// Pixels to EMs
+@function em($pxval, $base: $em-base) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+
+  @return ($pxval / $base) * 1em;
+}
+
+// Pixels to REMs
+@function rem($pxval) {
+
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+
+  $base: $em-base;
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+
+  @return ($pxval / $base) * 1rem;
+}
+
+// Converting px to rem (IE8 fallback)
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: rem($size);
+}
+
+/* ------------------------------------------------- */
+
+
+// FONT-SIZE and LINE-HEIGHT Custom Scale for Mobile, Tablet & Desktop
+
+/* NOTE:  Desktop variable is FIRST and Tablet variable is LAST.
+          Can Leave Tablet variable blank if there is only a font change from mobile to desktop.
+*/
+
+@mixin type-scale($font-size, $font-size-mobile:$font-size, $font-size-tablet:$font-size, $font-size-large:$font-size) {
+  @include font-size($font-size-mobile);
+  @include media($min-sm) {
+    @include font-size($font-size-tablet);
+  }
+  @include media($min-md) {
+    @include font-size($font-size);
+  }
+  @include media($min-lg) {
+    @include font-size($font-size-large);
+  }
+}
+
+/* Usage: 
+@include type-scale(56, 36, 36);
+*/
+
+@mixin leading-scale($line-height, $line-height-mobile:$line-height, $line-height-tablet:$line-height) {
+  line-height:$line-height-mobile;
+  @include media($min-sm) {
+    line-height:$line-height-tablet;
+  }
+  @include media($min-md) {
+    line-height:$line-height;
+  }
+}
+
+/* ------------------------------------------------- */
+
+
+// By default, you cannot change settings for bullet styling. 
+// The below mixins will allow it:
+
+// Unordered List Custom Styles
+@mixin ul-custom($top, $bullet-size, $bg) {
+  list-style:none;
+  padding:0;
+  margin:0;
+
+  li {
+    position:relative;
+    padding:0 0 15px 15px;
+
+    &:before {
+      content:'';   
+      display:block;
+      position:absolute;
+      left:0;
+      top:$top;
+      width:$bullet-size; 
+      height:$bullet-size; 
+      border-radius:100%; 
+      background:$bg;
+    }
+
+    ul {
+      list-style:none;
+      li {
+        &:first-child {
+          padding-top:15px;
+          &:before {
+            top:calc( 15px + #{$top} );
+          }
+        }
+        &:last-child {
+          padding-bottom:0;
+        }
+      }
+    }
+  }
+}
+
+// Ordered List Custom Styles
+@mixin ol-custom($number-color, $number-width) {
+  counter-reset: i 0;
+  list-style:none;
+  padding:0;
+  margin:0;
+
+  li {
+    position:relative;
+    padding:0 0 15px 35px;
+
+    &:before {
+      position:absolute;
+      left:0;
+      top:0;
+      content: counter(i) ".";
+      counter-increment: i;
+      color:$number-color;
+      text-align:right;
+      width:$number-width; 
+      /* Width is added so smaller and larger numbers 
+         will be right aligned neatly. (Ex: "9." then "10.") */
+    }
+
+    ol {
+      list-style:none;
+      li {
+        &:first-child {
+          padding-top:15px;
+          &:before {
+            top:15px;
+          }
+        }
+        &:last-child {
+          padding-bottom:0;
+        }
+      }
+    }
+  }
+}
+
+// Strip all default or custom list styling
+.remove-list-styles {
+  list-style:none;
+  padding:0;
+  margin:0;
+  li {
+    padding:0;
+    
+    &:before {
+      display:none;
+    }
+
+    ul, ol {
+      padding:0;
+      li {
+        &:first-child {
+          padding-top:0;
+        }
+      }
+    }
+  }
+}
+
+/* ------------------------------------------------- */

@@ -1,0 +1,41 @@
+/*------------------------------------------------------------
+  Miscellaneous Mixins
+------------------------------------------------------------*/
+
+// Background Mask
+@mixin mask-bg($bg-color, $opacity:1) {
+  position:relative;
+  z-index:1;
+  &:before {
+    content:'';
+    position:absolute;
+    z-index:-1;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    background:$bg-color;
+    opacity:$opacity;
+  }
+}
+
+// Background Image Cover
+@mixin bg-cover() {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size:cover;
+}
+
+// Chveron Arrows
+@mixin chevron($color, $direction) {
+  display:block;
+  width:10px;
+  height:10px;
+  border-color:$color;
+  border-width:2px 0 0 2px;
+  border-style:solid;
+  transform:rotate($direction);
+  overflow:visible;
+}

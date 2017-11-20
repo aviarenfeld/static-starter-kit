@@ -1,0 +1,25 @@
+// Variables/Libraries
+@import 'normalize.css/normalize';
+@import 'base/variables';
+@import 'base/mixins/mixin-media';
+@import 'base/mixins/mixin-typography';
+@import 'base/mixins/mixin-layout';
+@import 'base/mixins/mixin-forms';
+@import 'base/mixins/mixin-buttons';
+@import 'base/mixins/mixin-misc';
+
+// Core Resets and Constants:
+@import 'base/symbols';
+@import 'base/typography';
+@import 'base/forms';
+@import 'base/layout';
+
+// Layout & Major Regions
+@import 'shell/header';
+@import 'shell/footer';
+@import 'shell/page-header';
+
+// Specific Pages & Components
+@import 'components/_temp-styles';
+@import 'components/_home';
+

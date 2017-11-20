@@ -1,0 +1,157 @@
+/*------------------------------------------------------------
+  Layout Related Mixins
+------------------------------------------------------------*/
+
+// Absolute Centering & Framing:
+@mixin centerX() {
+  position: relative;
+  left: 50%;
+  transform:translateX(-50%);
+}
+
+@mixin centerY() {
+  position: relative;
+  top: 50%;
+  transform:translateY(-50%);
+}
+
+@mixin centerXY() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform:translate(-50%, -50%);
+}
+
+@mixin trbl( $top: 0, $right: $top, $bottom: $top, $left: $right ) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+/* ----------------------------------------------
+  FIXING THE VW-CONTAINER MIXIN
+  1. Use the raw px values to get
+      ems for comparison in min() call
+  2. Replace the depricated
+      outer-container() mixin form neat
+  3. Also, change default vw-container padding
+      such that it doesn't overwrite vertical.
+----------------------------------------------- */
+
+@mixin vw-container( $max-width: $md, $base-padding: 16px ) {
+  padding-left: $base-padding;
+  padding-right: $base-padding;
+  @include outer-container;
+  @include media($min-xs) { max-width: 100%; }
+  @include media($min-sm) { max-width: 100%; }
+  $temp-max: call(rem, $max-width);
+  $temp-med: call(rem, $md);
+  $temp-lg: call(rem, $lg);
+  @include media($min-md) { max-width: min( $temp-max, $temp-med ); }
+  @include media($min-lg) { max-width: min( $temp-max, $temp-lg ); }
+}
+
+@mixin outer-container($max-width: 100%) {
+  @include clearfix;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin remove-container() {
+  padding: 0;
+  @include outer-container;
+  @include media($min-xs) { max-width: none; }
+  @include media($min-sm) { max-width: none; }
+  @include media($min-md) { max-width: none; }
+  @include media($min-lg) { max-width: none; }
+}
+
+// Collapses Tables on browser widths smaller than 480px
+@mixin table-mobile-collapse($collapse-btn-color, $collapse-btn-bg) {
+  .collapse-table {
+    display:none;
+  }
+  table {
+    @include media($max-xs) {
+      position:relative;
+      &:before {
+        content:'Tap to open table';
+        position:absolute;
+        z-index:2;
+        @include centerXY();
+        width:100%;
+        color:white;
+        font-weight:700;
+        text-transform: uppercase;
+        text-align:center;
+        cursor:pointer;
+      }
+      &:after {
+        content:"";
+        position:absolute;
+        z-index: 1;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,.8);
+        cursor:pointer;
+      }
+      
+      th, td {
+        height:7px;
+        font-size:0;
+      }
+    } 
+  }
+
+  &.mobile-table-open {
+    @include media($max-xs) {
+      .collapse-table {
+        display:block;
+        width:70%;
+        text-align:center;
+        text-transform:uppercase;
+        font-weight: 700;
+        color:$collapse-btn-color;
+        padding:10px 15px;
+        margin:0 auto;
+        background:$collapse-btn-bg;
+        cursor:pointer;
+      }
+
+      table {
+        margin-top:0;
+        &:before, &:after {
+          display:none;
+        }
+
+        th,td {
+          height:auto;
+          font-size:inherit;
+        }
+      }
+    }
+  }
+}
+
+// Flex Vertical Centering
+@mixin flex-vertical-center($justify-content) {
+  display:flex;
+  flex-direction:column;
+  justify-content:$justify-content;
+  align-items:center;
+}
+
+// Clearfix
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}

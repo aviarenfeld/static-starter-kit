@@ -1,0 +1,127 @@
+/* -----------------------------------------------
+   Layout
+----------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased; // helps make fonts closer to designed versions
+  -moz-osx-font-smoothing: grayscale; // helps make fonts closer to designed versions
+}
+
+
+hr {
+  clear:both;
+  display:block;
+  height:1px;
+  padding:0;
+  margin:20px 0;
+  border:none;
+  background:$base-border-color;
+  @include media($min-md) {
+    margin:40px 0;
+  }
+}
+
+// Responsive Videos
+.video-container {
+  position:relative;
+  height:0;
+  padding:0 0 56.25% 0;
+  margin:0 0 20px 0;
+  overflow:hidden;
+
+  iframe, object, embed {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+}
+
+// Default Data Table
+table {
+  width:100%;
+  margin:30px 0;
+  border:1px solid $base-border-color;
+
+  th, td {
+    text-align:center;
+    padding:15px;
+    border:1px solid $base-border-color;
+  }
+
+  caption, tfoot {
+    padding:15px;
+  }
+}
+
+// Mobile Data Table
+.table-wrapper {
+  @include table-mobile-collapse(white, $accent-primary);
+}
+
+
+/* -----------------------------------------------
+   REACT ONLY.
+   (Remove if not a React site.)
+----------------------------------------------- */
+// React requires a div to render into.
+// Usually left unstyled, I try to ignore it.
+#root {
+
+  // Another wrapper is required to contain the modal
+  // overlay window alongside any rendered components.
+  // Could be removed if you don't want to use overlays.
+  .overlay-wrap {
+
+    // Your outer-most components will render here.
+    .outer-layout {
+      padding: 16px;
+    }
+  }
+}
+
+/* -----------------------------------------------
+   WORDPRESS ONLY.
+   (Remove if not a wordpress site.)
+----------------------------------------------- */
+
+// WYZIWYG Editor Images
+.aligncenter {
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.alignleft {
+  display:block;
+  margin:0 auto 20px auto;
+  @include media($min-xs) {
+    float: left;
+    margin:0 20px 20px 0;
+  }
+}
+
+.alignright {
+  display:block;
+  margin:0 auto 20px auto;
+  @include media($min-xs) {
+    float: right;
+    margin:0 0 20px 20px;
+  }
+}
+
+figure {
+  img {
+    max-width:100%;
+  }
+}
+
+figure.alignnone {
+  margin-left: 0;
+  margin-right: 0;
+}

@@ -1,0 +1,187 @@
+/*------------------------------------------------------------
+  Media Query Mixins
+------------------------------------------------------------*/
+
+/* -------------------------------
+ Raw Breakpoint Values
+------------------------------- */
+$xs    : 480;
+$sm    : 768;
+$md    : 970;
+$lg    : 1200;
+$xlg   : 1440;
+$xxlg  : 1600;
+$sm-ht : 768;
+$md-ht : 970;
+
+/* -------------------------------
+ Default Media Query Breakpoints
+------------------------------- */
+$screen-xs    : em($xs);
+$screen-sm    : em($sm);
+$screen-md    : em($md);
+$screen-lg    : em($lg);
+$screen-xlg   : em($xlg);
+$screen-xxlg  : em($xxlg);
+$screen-sm-ht : em($sm-ht);
+$screen-md-ht : em($md-ht);
+
+/* -------------------------------
+ Max-Media Query Breakpoints
+------------------------------- */
+$screen-xs-max    : em($xs - 1);
+$screen-sm-max    : em($sm - 1);
+$screen-md-max    : em($md - 1);
+$screen-lg-max    : em($lg - 1);
+$screen-xlg-max   : em($xlg - 1);
+$screen-xxlg-max  : em($xxlg - 1);
+$screen-sm-ht-max : em($sm-ht - 1);
+$screen-md-ht-max : em($md-ht - 1);
+
+/* ---------------------------
+ Media Query List of Options
+--------------------------- */
+
+/* Note:  95% of the time, use the min-width mixin for media queries. 
+          Max Widths, In Between Widths, Short Heights, Internet Explorer, etc
+          should ONLY be used as a last resort. 
+*/
+
+// Minimum Width
+$min-xs       :min-xs;
+$min-sm       :min-sm;
+$min-md       :min-md;
+$min-lg       :min-lg;
+$min-xlg      :min-xlg;
+$min-xxlg     :min-xxlg;
+
+// Maximum Width
+$max-xs       :max-xs;
+$max-sm       :max-sm;
+$max-md       :max-md;
+$max-lg       :max-lg;
+$max-xlg      :max-xlg;
+$max-xxlg     :max-xxlg;
+
+// In Between Widths
+$btn-xs-sm    :btn-xs-sm;
+$btn-sm-md    :btn-sm-md;
+$btn-md-lg    :btn-md-lg;
+
+// Short Heights
+$min-sm-ht    :min-sm-ht;
+$min-md-ht    :min-md-ht;
+
+// Devices Only
+$tablet       :tablet;
+$mobile       :mobile;
+
+// IE Browsers
+$ie-edge      :ie-edge;
+$ie-10-11     :ie-ten-eleven;
+
+
+/* ---------------------------
+ Media Query Conditionals
+--------------------------- */
+@mixin media($breakpoint) {
+
+  // Minimum Width
+  @if $breakpoint == $min-xs {
+    @media only screen and (min-width: $screen-xs) {
+      @content;
+    }
+  }
+  @else if $breakpoint == $min-sm {
+    @media only screen and (min-width: $screen-sm) {
+      @content;
+    }
+  }
+  @else if $breakpoint == $min-md {
+    @media only screen and (min-width: $screen-md) {
+      @content;
+    }
+  }
+  @else if $breakpoint == $min-lg {
+    @media only screen and (min-width: $screen-lg) {
+      @content;
+    }
+  }
+
+  // Maximum Width
+  @else if $breakpoint == $max-xs {
+    @media only screen and (max-width: $screen-xs-max) {
+      @content;
+    }
+  }
+  @else if $breakpoint == $max-sm {
+    @media only screen and (max-width: $screen-sm-max) {
+      @content;
+    }
+  }
+  @else if $breakpoint == $max-md {
+    @media only screen and (max-width: $screen-md-max) {
+      @content;
+    }
+  }
+  @else if $breakpoint == $max-lg {
+    @media only screen and (max-width: $screen-lg-max) {
+      @content;
+    }
+  }
+
+  // Between Width
+  @else if $breakpoint == $btn-xs-sm {
+    @media only screen and (min-width: $screen-xs) and (max-width: $screen-sm) {
+      @content;
+    }
+  }
+  @else if $breakpoint == $btn-sm-md {
+    @media only screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      @content;
+    }
+  }
+  @else if $breakpoint == $btn-md-lg {
+    @media only screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      @content;
+    }
+  }
+
+  // Short Heights
+  @else if $breakpoint == $min-sm-ht {
+    @media only screen and (min-width: $screen-sm) and (max-height: $screen-sm-ht) {
+      @content;
+    }
+  }
+  @else if $breakpoint == $min-md-ht {
+    @media only screen and (min-width: $screen-sm) and (max-height: $screen-md-ht) {
+      @content;
+    }
+  }
+
+  // Devices
+  @else if $breakpoint == $mobile {
+    @media only screen and (max-device-width: $screen-sm) {
+      @content;
+    }
+  }
+  @else if $breakpoint == $tablet {
+    @media only screen and (min-device-width: $screen-sm) and (max-device-width: $screen-md) {
+      @content;
+    }
+  }
+
+  // IE Edge
+  @else if $breakpoint == $ie-edge {
+    @supports (-ms-ime-align:auto) {
+      @content;
+    }
+  }
+
+  // IE 10/11
+  @else if $breakpoint == $ie-10-11 {
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+      @content;
+    }
+  }
+}
