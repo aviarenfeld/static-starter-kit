@@ -67,6 +67,28 @@ table {
   @include table-mobile-collapse(white, $accent-primary);
 }
 
+//CSS Grid Table
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  @include media($min-sm) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 200px 100px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+}
+.grid-item {
+  background-color:  #d1d1e0;
+  border-radius: 2px;
+  padding: 0.9em;
+  text-align: center;
+  &:nth-child(odd){
+    background-color:#9494b8;
+  }
+}
+
 
 /* -----------------------------------------------
    REACT ONLY.
